@@ -1,0 +1,35 @@
+{
+    "kisiler": [
+        {
+            "id": 1,
+            "ad": "Ahmet",
+            "soyad": "Yılmaz",
+            "Şifre": "123456"
+        }
+        ,
+        {
+            "id": 2,
+            "ad": "Mehmet",
+            "soyad": "Demir",
+            "Şifre": "262626"
+        },
+        {
+            "id": 3,
+            "ad": "Ayşe",
+            "soyad": "Kara",
+            "Şifre": "454545"
+        },
+        {
+            "id": 4,
+            "ad": "Eda",
+            "soyad": "Yılmaz",
+            "Şifre": "261626"
+        },
+        {
+            "id": 5,
+            "ad": "Ali",
+            "soyad": "Koç",
+            "Şifre": "999999"
+        }
+    ]
+}
