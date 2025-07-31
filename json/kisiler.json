@@ -1,35 +1,37 @@
 {
     "kisiler": [
         {
-            "id": 1,
+            "resim": "images/ahmet.jpg",
             "ad": "Ahmet",
             "soyad": "Yılmaz",
             "Şifre": "123456"
         }
         ,
         {
-            "id": 2,
+            "resim": "images/mehmet.jpeg",
             "ad": "Mehmet",
             "soyad": "Demir",
             "Şifre": "262626"
         },
         {
-            "id": 3,
-            "ad": "Ayşe",
-            "soyad": "Kara",
+            "resim": "images/foto.jpg",
+            "ad": "olcay",
+            "soyad": "Yılmaz",
             "Şifre": "454545"
+            
         },
         {
-            "id": 4,
-            "ad": "Eda",
+            "resim": "images/mustafa.jpg",
+            "ad": "mustafa",
             "soyad": "Yılmaz",
             "Şifre": "261626"
         },
         {
-            "id": 5,
+            "resim": "images/ali.jpeg",
             "ad": "Ali",
             "soyad": "Koç",
             "Şifre": "999999"
         }
+
     ]
 }

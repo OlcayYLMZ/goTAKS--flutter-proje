@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   var ad=TextEditingController();
   var sifre=TextEditingController();
   
-  Future<bool> giriskontrol(String ad, String sifre) async {
+  Future<Map<String, dynamic>?> giriskontrol(String ad, String sifre) async {
     try {
       var okunanVeri=await rootBundle.loadString("json/kisiler.json"); // JSON dosyasını oku
       var jsonveri=jsonDecode(okunanVeri); // okunan veriyi jsona çevirdik
@@ -26,14 +26,14 @@ class _LoginPageState extends State<LoginPage> {
       for (var kisi in kisiler)
 {
         if (kisi["ad"]== ad && kisi["Şifre"] == sifre) {
-          return true; // Kullanıcı adı ve şifre eşleşirse true döner
+          return kisi; // Kullanıcı adı ve şifre eşleşirse kullanıcı bilgilerini döner
         }
       }
-      return false;
+      return null;
     } catch (e) {
       print("Hata: $e");
     }
-    return false; // Kullanıcı adı ve şifre eşleşmezse false döner
+    return null; // Kullanıcı adı ve şifre eşleşmezse null döner
   }
 
   @override
@@ -99,10 +99,17 @@ if (ad.text.isEmpty || sifre.text.isEmpty) {
   return; // Durur, devam etmez
 }
   // JSON'dan kontrol et
-    bool dogruMu = await giriskontrol(ad.text, sifre.text);
-    if (dogruMu) {
+    Map<String, dynamic>? kullaniciVeri = await giriskontrol(ad.text, sifre.text);
+   if (kullaniciVeri != null) {
+  // Kullanıcı bilgilerini çıkar
+  String userName = kullaniciVeri["ad"];
+  String userSurname = kullaniciVeri["soyad"];
+  String userImage = kullaniciVeri["resim"];
+  
   // Başarılı giriş - Anasayfaya git
-  Navigator.push(context, MaterialPageRoute(builder: (context) => Anasayfa()));
+  Navigator.push(context, MaterialPageRoute(
+    builder: (context) => Anasayfa(userName: userName, userSurname: userSurname, userImage: userImage)
+  ));
 } else {
   // Başarısız giriş - Hata mesajı göster
   ScaffoldMessenger.of(context).showSnackBar(
