@@ -8,15 +8,22 @@ class Kayit extends StatefulWidget {
 }
 
 class _KayitState extends State<Kayit> {
- var kullanici=TextEditingController();
-  var email=TextEditingController();
-  var sifre=TextEditingController();
- 
+  var kullanici = TextEditingController();
+  var email = TextEditingController();
+  var sifre = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  
+    return Scaffold(
       appBar: AppBar(
-        title: const Text('Kayıt Ol', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "serif"),),
+        title: const Text(
+          'Kayıt Ol',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            fontFamily: "serif",
+          ),
+        ),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
       ),
